@@ -23,11 +23,15 @@ public class OrderServiceV3 implements OrderService {
     @Override
     public void order() {
 
+
+
         Timer timer = Timer.builder("my.order")
                 .tag("class", this.getClass().getName())
                 .tag("method", "order")
                 .description("order")
                 .register(registry);
+
+        log.info("sdfasdfadfasasdf");
 
         timer.record(() ->{
             log.info("주문");
